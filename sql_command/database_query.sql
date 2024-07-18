@@ -158,10 +158,12 @@ order_item_id int IDENTITY(1,1) ,
 order_id int,
 [food_name] nvarchar(30),
 [rest_name] nvarchar(30) ,
-[meal] nvarchar(30) unique,
+[meal] nvarchar(30) ,
 [kind] nvarchar(30),
 price float,
 time_prepare int,
+food_id int,
+[count] int,
 primary key (order_item_id),
 foreign key (order_id) references orders(order_id)
 )
@@ -170,13 +172,31 @@ foreign key (order_id) references orders(order_id)
 create table orders
 (
 order_id int IDENTITY(1,1) ,
-[name] nvarchar(30),
+customer_id int,
 [address] nvarchar(200),
 [phone_number] nvarchar(30),
 sum_price float,
 payment_id nvarchar(30),
-primary key (order_id)
+primary key (order_id),
+foreign key (customer_id) references customer(customer_id)
 )
+
+
+
+
+create table customer
+(
+customer_id int IDENTITY(1,1) ,
+[name] nvarchar(30),
+username nvarchar(30),
+[password] nvarchar(30),
+[phone_number] nvarchar(30),
+[address] nvarchar(200),
+primary key (customer_id)
+)
+
+
+insert into rest_manager.dbo.orders_item values(1,'vfdv','csdcsd','vdfvc','vdfv',20,20)
 
 
 

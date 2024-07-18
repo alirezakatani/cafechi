@@ -31,5 +31,20 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            sqlcon newsq = new sqlcon();
+
+            newsq.sql = "insert into rest_manager.dbo.customer values('" + textBox1.Text + "','" + textBox2.Text + "','" +textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "')";
+            newsq.setcon();
+            MessageBox.Show("Dear " + textBox1.Text + " you registred successfuly", "sign in", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            this.Hide();
+            Form11 newlogin = new Form11();
+            newlogin.ShowDialog();
+
+
+
+        }
     }
 }

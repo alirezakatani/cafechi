@@ -172,6 +172,7 @@ namespace WindowsFormsApp1
             this.textBox3.Size = new System.Drawing.Size(200, 28);
             this.textBox3.TabIndex = 73;
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // dataGridView1
             // 
@@ -242,6 +243,7 @@ namespace WindowsFormsApp1
             this.button2.TabIndex = 87;
             this.button2.Text = "مشاهده سبد خرید";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -310,7 +312,7 @@ namespace WindowsFormsApp1
             this.label10.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label10.Location = new System.Drawing.Point(190, 420);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 38);
+            this.label10.Size = new System.Drawing.Size(118, 38);
             this.label10.TabIndex = 92;
             this.label10.Text = "لیست غذاها";
             // 

@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             builder.UserID = "Sa";
             builder.Password = "1080566783";
             builder.InitialCatalog = "rest_manager";
-            connection = new SqlConnection(builder.ConnectionString); // Your Connection String here
+            connection = new SqlConnection(builder.ConnectionString); 
             var dataAdapter = new SqlDataAdapter(sql, connection);
 
             var commandBuilder = new SqlCommandBuilder(dataAdapter);

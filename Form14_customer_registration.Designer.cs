@@ -60,9 +60,9 @@ namespace WindowsFormsApp1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.Location = new System.Drawing.Point(629, 178);
+            this.label3.Location = new System.Drawing.Point(641, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 42);
+            this.label3.Size = new System.Drawing.Size(104, 42);
             this.label3.TabIndex = 4;
             this.label3.Text = "رمز عبور";
             // 
@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
             this.label4.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label4.Location = new System.Drawing.Point(627, 268);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 42);
+            this.label4.Size = new System.Drawing.Size(130, 42);
             this.label4.TabIndex = 6;
             this.label4.Text = "شماره تلفن";
             // 
@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
             this.label2.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label2.Location = new System.Drawing.Point(623, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 42);
+            this.label2.Size = new System.Drawing.Size(122, 42);
             this.label2.TabIndex = 2;
             this.label2.Text = "نام کاربری";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
             this.label5.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label5.Location = new System.Drawing.Point(677, 332);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 42);
+            this.label5.Size = new System.Drawing.Size(73, 42);
             this.label5.TabIndex = 8;
             this.label5.Text = "آدرس";
             // 
@@ -131,7 +131,7 @@ namespace WindowsFormsApp1
             this.label1.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label1.Location = new System.Drawing.Point(712, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 42);
+            this.label1.Size = new System.Drawing.Size(45, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "نام";
             // 
@@ -176,6 +176,7 @@ namespace WindowsFormsApp1
             this.button1.TabIndex = 10;
             this.button1.Text = "ثبت مشخصات";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form14_customer_registration
             // 

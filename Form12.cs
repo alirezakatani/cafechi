@@ -13,9 +13,12 @@ namespace WindowsFormsApp1
     public partial class Form12 : Form
     {
         Boolean status;
-        public Form12()
+        customer customer;
+        public Form12(customer cus)
         {
             InitializeComponent();
+            customer = cus;
+
         }
 
         private void Form12_Load(object sender, EventArgs e)
@@ -67,8 +70,13 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form13 newship = new Form13();
+            Form13 newship = new Form13(customer);
             newship.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

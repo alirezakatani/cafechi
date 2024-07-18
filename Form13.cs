@@ -18,10 +18,40 @@ namespace WindowsFormsApp1
         int index = 0;
         int food_size = 0;
         food[] baseket_food;
+        customer customer = new customer();
         int order_id;
-        public Form13()
+        public Form13(customer cus)
         {
             InitializeComponent();
+            customer = cus;
+
+
+
+
+            sqlcon newsq = new sqlcon();
+            newsq.sql = "select max(order_id) from rest_manager.dbo.orders";
+            newsq.setcon();
+
+            try
+            {
+                newsq.reader.Read();
+                order_id = newsq.reader.GetInt32(0);
+            }
+
+
+            catch
+            {
+                order_id = 0;
+            }
+
+
+
+
+            order_id += 1;
+            newsq.sql = "insert into rest_manager.dbo.orders values('" + customer.customer_id + "','" + customer.address + "','" + customer.phone_number + "',null,null)";
+            newsq.setcon();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -269,19 +299,28 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            sqlcon newsq = new sqlcon();
-            newsq.sql = "select max(order_id) as maxes from rest_manager.dbo.orders";
-            newsq.setcon();
-            newsq.reader.Read();
-            order_id = newsq.reader.GetInt32(0);
-            order_id += 1;
-            
-            newsq.sql = "insert into rest_manager.dbo.orders_item values(" + order_id.ToString()+",'"+textBox2.Text+"','"+comboBox3.Text+"','"+comboBox2.Text+"','"+comboBox1.Text+"',"+textBox5.Text+","+textBox4.Text+")";
-            newsq.setcon();
-            newsq.setdata_adaptor();
-            dataGridView2.ReadOnly = true;
-            dataGridView2.DataSource = newsq.ds.Tables[0];
 
+
+            sqlcon newsq = new sqlcon();
+            newsq.sql = "insert into rest_manager.dbo.orders_item values(" + order_id.ToString()+",'"+textBox2.Text+"','"+comboBox3.Text+"','"+comboBox2.Text+"','"+comboBox1.Text+"',"+textBox5.Text+","+textBox4.Text+",'"+textBox3.Text+"',1)";
+            newsq.setcon();
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            sqlcon show_basket = new sqlcon();
+            show_basket.sql = "select * from orders_item where order_id="+order_id.ToString();
+            show_basket.setdata_adaptor();
+            dataGridView2.ReadOnly = true;
+            dataGridView2.DataSource = show_basket.ds.Tables[0];
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
