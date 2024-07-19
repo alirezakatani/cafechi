@@ -42,8 +42,6 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,10 +53,16 @@ namespace WindowsFormsApp1
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -92,7 +96,7 @@ namespace WindowsFormsApp1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(450, 365);
+            this.label7.Location = new System.Drawing.Point(230, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(56, 38);
             this.label7.TabIndex = 81;
@@ -101,7 +105,7 @@ namespace WindowsFormsApp1
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(254, 368);
+            this.textBox5.Location = new System.Drawing.Point(34, 262);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(169, 28);
             this.textBox5.TabIndex = 80;
@@ -130,7 +134,7 @@ namespace WindowsFormsApp1
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.Location = new System.Drawing.Point(429, 307);
+            this.label5.Location = new System.Drawing.Point(489, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 38);
             this.label5.TabIndex = 77;
@@ -139,7 +143,7 @@ namespace WindowsFormsApp1
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(254, 313);
+            this.textBox2.Location = new System.Drawing.Point(314, 269);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(169, 28);
             this.textBox2.TabIndex = 76;
@@ -184,31 +188,12 @@ namespace WindowsFormsApp1
             this.dataGridView1.Size = new System.Drawing.Size(510, 255);
             this.dataGridView1.TabIndex = 72;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.FileNiko_Wallpaper_Pack_03___85;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(481, 210);
-            this.panel1.TabIndex = 71;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(-8, -15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(486, 241);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button5.Location = new System.Drawing.Point(266, 247);
+            this.button5.Location = new System.Drawing.Point(367, 323);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(147, 37);
+            this.button5.Size = new System.Drawing.Size(161, 37);
             this.button5.TabIndex = 70;
             this.button5.Text = "قبلی";
             this.button5.UseVisualStyleBackColor = true;
@@ -237,9 +222,9 @@ namespace WindowsFormsApp1
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button2.Location = new System.Drawing.Point(34, 364);
+            this.button2.Location = new System.Drawing.Point(187, 370);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 37);
+            this.button2.Size = new System.Drawing.Size(174, 37);
             this.button2.TabIndex = 87;
             this.button2.Text = "مشاهده سبد خرید";
             this.button2.UseVisualStyleBackColor = true;
@@ -248,9 +233,9 @@ namespace WindowsFormsApp1
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button3.Location = new System.Drawing.Point(37, 309);
+            this.button3.Location = new System.Drawing.Point(367, 370);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(197, 37);
+            this.button3.Size = new System.Drawing.Size(161, 37);
             this.button3.TabIndex = 86;
             this.button3.Text = "اضافه شدن به سبد خرید";
             this.button3.UseVisualStyleBackColor = true;
@@ -259,9 +244,9 @@ namespace WindowsFormsApp1
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button7.Location = new System.Drawing.Point(73, 245);
+            this.button7.Location = new System.Drawing.Point(187, 323);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(147, 37);
+            this.button7.Size = new System.Drawing.Size(174, 37);
             this.button7.TabIndex = 85;
             this.button7.Text = "بعدی";
             this.button7.UseVisualStyleBackColor = true;
@@ -316,11 +301,61 @@ namespace WindowsFormsApp1
             this.label10.TabIndex = 92;
             this.label10.Text = "لیست غذاها";
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(593, 379);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(200, 22);
+            this.numericUpDown1.TabIndex = 93;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("MRT_Ramollah", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label11.Location = new System.Drawing.Point(896, 370);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 38);
+            this.label11.TabIndex = 94;
+            this.label11.Text = "تعداد";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button1.Location = new System.Drawing.Point(31, 323);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 84);
+            this.button1.TabIndex = 95;
+            this.button1.Text = "اتمام خرید و تسویه حساب";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.FileNiko_Wallpaper_Pack_03___85;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(481, 210);
+            this.panel1.TabIndex = 71;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(-8, -15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(486, 241);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 712);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView2);
@@ -350,9 +385,10 @@ namespace WindowsFormsApp1
             this.Text = "Form13";
             this.Load += new System.EventHandler(this.Form13_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,5 +422,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button1;
     }
 }

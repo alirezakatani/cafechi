@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
             comboBox2.Items.Clear();
             comboBox2.Text = "";
             sqlcon newsql = new sqlcon();
-            newsql.sql = "select list_name from rest_manager.dbo.list where list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list_meal='" + comboBox1.Text + "'";
+            newsql.sql = "select list_name from rest_manager.dbo.list_match where list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and food_meal='" + comboBox1.Text + "'";
             newsql.setcon();
 
 
@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
         {
             sqlcon newsql = new sqlcon();
-            newsql.sql = "select food.id,food.name,food.meal,food.kind,food.price,food.score,food.rest_name,food.time_prepare,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list.list_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "'";
+            newsql.sql = "select food.id,food.name,food.meal,food.kind,food.price,food.score,food.rest_name,food.time_prepare,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list_match.food_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "'";
             newsql.setdata_adaptor();
 
             dataGridView1.ReadOnly = true;
@@ -117,13 +117,13 @@ namespace WindowsFormsApp1
 
 
             int x;
-            newsql.sql = "select count(*) from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list.list_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "'";
+            newsql.sql = "select count(*) from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list_match.food_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "'";
             newsql.setcon();
             newsql.reader.Read();
             x = newsql.reader.GetInt32(0);
             newsql.delcon();
             sqlcon newsq = new sqlcon();
-            newsq.sql = "select food.name,food.meal,food.kind,food.price,food.id,food.score,food.rest_name,food.time_prepare,food.image_path,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list.list_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "'";
+            newsq.sql = "select food.name,food.meal,food.kind,food.price,food.id,food.score,food.rest_name,food.time_prepare,food.image_path,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list_match.food_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "'";
             newsq.setcon();
             foods = new food[x];
             food_size = x;
@@ -219,7 +219,7 @@ namespace WindowsFormsApp1
             list ml = new list();
             ml.list_date = dateTimePicker1.Value;
             sqlcon newsql = new sqlcon();
-            newsql.sql = "select list_meal from rest_manager.dbo.list where list_date='" + ml.list_date.ToString("yyyy/MM/dd") + "'";
+            newsql.sql = "select food_meal from rest_manager.dbo.list_match where list_date='" + ml.list_date.ToString("yyyy/MM/dd") + "'";
             newsql.setcon();
 
 
@@ -236,7 +236,7 @@ namespace WindowsFormsApp1
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             sqlcon newsql = new sqlcon();
-            newsql.sql = "select food.id,food.name,food.meal,food.kind,food.price,food.score,food.rest_name,food.time_prepare,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list.list_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "' and food.rest_name='"+comboBox3.Text+"'";
+            newsql.sql = "select food.id,food.name,food.meal,food.kind,food.price,food.score,food.rest_name,food.time_prepare,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list_match.food_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "' and food.rest_name='"+comboBox3.Text+"'";
             newsql.setdata_adaptor();
 
             dataGridView1.ReadOnly = true;
@@ -244,13 +244,13 @@ namespace WindowsFormsApp1
 
 
             int x;
-            newsql.sql = "select count(*) from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list.list_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text  +"' and food.rest_name='" + comboBox3.Text + "'";
+            newsql.sql = "select count(*) from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list_match.food_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text  +"' and food.rest_name='" + comboBox3.Text + "'";
             newsql.setcon();
             newsql.reader.Read();
             x = newsql.reader.GetInt32(0);
             newsql.delcon();
             sqlcon newsq = new sqlcon();
-            newsq.sql = "select food.name,food.meal,food.kind,food.price,food.id,food.score,food.rest_name,food.time_prepare,food.image_path,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list.list_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "' and food.rest_name='"+comboBox3.Text+"'";
+            newsq.sql = "select food.name,food.meal,food.kind,food.price,food.id,food.score,food.rest_name,food.time_prepare,food.image_path,list.list_name,list.list_date from rest_manager.dbo.list inner join  rest_manager.dbo.list_match on(list.list_name=list_match.list_name and list.list_meal=list_match.list_meal and list.list_date=list_match.list_date) inner join dbo.food on (list_match.food_name=food.name and list_match.food_meal=food.meal)  " + "where list.list_date='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and list_match.food_meal='" + comboBox1.Text + "' and list.list_name='" + comboBox2.Text + "' and food.rest_name='"+comboBox3.Text+"'";
             newsq.setcon();
             foods = new food[x];
             food_size = x;
@@ -302,8 +302,10 @@ namespace WindowsFormsApp1
 
 
             sqlcon newsq = new sqlcon();
-            newsq.sql = "insert into rest_manager.dbo.orders_item values(" + order_id.ToString()+",'"+textBox2.Text+"','"+comboBox3.Text+"','"+comboBox2.Text+"','"+comboBox1.Text+"',"+textBox5.Text+","+textBox4.Text+",'"+textBox3.Text+"',1)";
+            newsq.sql = "insert into rest_manager.dbo.orders_item values(" + order_id.ToString() + ",'" + textBox2.Text + "','" + comboBox3.Text + "','" + comboBox2.Text + "','" + comboBox1.Text + "'," + textBox5.Text + "," + textBox4.Text + ",'" + textBox3.Text + "'," + numericUpDown1.Value.ToString() + "," + (numericUpDown1.Value * Convert.ToInt32(textBox5.Text)).ToString() + ",'in progress')";
             newsq.setcon();
+            comboBox3.Enabled = false;
+
 
 
         }
@@ -322,6 +324,13 @@ namespace WindowsFormsApp1
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form14 payment_form = new Form14();
+            payment_form.Show();
         }
     }
 }

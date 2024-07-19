@@ -164,6 +164,8 @@ price float,
 time_prepare int,
 food_id int,
 [count] int,
+all_price int,
+[status] nvarchar(30),
 primary key (order_item_id),
 foreign key (order_id) references orders(order_id)
 )
