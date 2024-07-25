@@ -139,6 +139,7 @@ namespace WindowsFormsApp1
             this.label5.Size = new System.Drawing.Size(79, 38);
             this.label5.TabIndex = 77;
             this.label5.Text = "نام غذا";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // textBox2
             // 

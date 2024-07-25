@@ -30,6 +30,11 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,11 +48,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,52 @@ namespace WindowsFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 618);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label8.Location = new System.Drawing.Point(555, 123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(220, 42);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "شماره کارت پرداختی";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(46, 131);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(469, 22);
+            this.textBox7.TabIndex = 15;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(46, 478);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(469, 22);
+            this.textBox6.TabIndex = 13;
+            this.textBox6.Visible = false;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(639, 482);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.label7.Location = new System.Drawing.Point(674, 466);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 42);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "رزور میز";
             // 
             // button1
             // 
@@ -188,54 +234,9 @@ namespace WindowsFormsApp1
             this.label6.Font = new System.Drawing.Font("MRT_Ramollah", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.label6.Location = new System.Drawing.Point(321, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(188, 54);
+            this.label6.Size = new System.Drawing.Size(154, 53);
             this.label6.TabIndex = 0;
             this.label6.Text = "فاکتور خرید";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.Location = new System.Drawing.Point(674, 466);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 42);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "رزور میز";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(639, 482);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(18, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(46, 478);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(469, 22);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("MRT_Casablanca", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label8.Location = new System.Drawing.Point(555, 123);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(220, 42);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "شماره کارت پرداختی";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(46, 131);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(469, 22);
-            this.textBox7.TabIndex = 15;
             // 
             // Form14
             // 
@@ -247,6 +248,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.panel1);
             this.Name = "Form14";
             this.Text = "Form14";
+            this.Load += new System.EventHandler(this.Form14_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -43,6 +43,7 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -51,6 +52,7 @@ namespace WindowsFormsApp1
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.button5);
@@ -60,7 +62,7 @@ namespace WindowsFormsApp1
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(665, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 284);
+            this.panel2.Size = new System.Drawing.Size(211, 324);
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             this.panel2.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
@@ -68,7 +70,7 @@ namespace WindowsFormsApp1
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button7.Location = new System.Drawing.Point(12, 245);
+            this.button7.Location = new System.Drawing.Point(13, 283);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(199, 38);
             this.button7.TabIndex = 11;
@@ -217,6 +219,17 @@ namespace WindowsFormsApp1
             this.label1.Text = "به رستوران خود خوش امدید";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button9.Location = new System.Drawing.Point(13, 246);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(199, 42);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "تعیین وضعیت تراکنش";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -256,5 +269,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button9;
     }
 }

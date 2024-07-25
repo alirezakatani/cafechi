@@ -203,6 +203,30 @@ insert into rest_manager.dbo.orders_item values(1,'vfdv','csdcsd','vdfvc','vdfv'
 
 
 
+create table payment
+(
+id int IDENTITY(1,1) ,
+price_all              float		    ,
+payment_card           nvarchar(50)	,
+payment_id             nvarchar(50)	,
+ Deposit_account_number nvarchar(50)	,
+ Deposit_receipt_number nvarchar(50)	,
+ reciver_phone_number   nvarchar(50)	,
+ reciver_address        nvarchar(50)	,
+book_table            bit			,
+table_id                int			, 
+orders_id               int			, 
+customer_id             int			, 
+[time] nvarchar(20),
+[status] nvarchar(40),
+foreign key (customer_id) references customer(customer_id),
+foreign key (orders_id) references orders(order_id)
+
+)
+
+
+
+
 
 
 

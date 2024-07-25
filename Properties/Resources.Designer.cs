@@ -83,6 +83,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ceramic_tile_pattern_combo_002 {
+            get {
+                object obj = ResourceManager.GetObject("ceramic tile pattern combo_002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ds {
             get {
                 object obj = ResourceManager.GetObject("ds", resourceCulture);
@@ -396,6 +406,36 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap Screenshot_2024_07_12_165657 {
             get {
                 object obj = ResourceManager.GetObject("Screenshot 2024-07-12 165657", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutterstock_300372164 {
+            get {
+                object obj = ResourceManager.GetObject("shutterstock_300372164", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutterstock_303141995 {
+            get {
+                object obj = ResourceManager.GetObject("shutterstock_303141995", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutterstock_3031419951 {
+            get {
+                object obj = ResourceManager.GetObject("shutterstock_3031419951", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

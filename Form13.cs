@@ -17,9 +17,12 @@ namespace WindowsFormsApp1
         food[] foods;
         int index = 0;
         int food_size = 0;
-        food[] baseket_food;
+        List<food> baseket_food;
         customer customer = new customer();
         int order_id;
+        paymnet new_pay;
+
+        
         public Form13(customer cus)
         {
             InitializeComponent();
@@ -50,6 +53,16 @@ namespace WindowsFormsApp1
             order_id += 1;
             newsq.sql = "insert into rest_manager.dbo.orders values('" + customer.customer_id + "','" + customer.address + "','" + customer.phone_number + "',null,null)";
             newsq.setcon();
+            new_pay = new paymnet();
+            new_pay.orders_id = order_id;
+            baseket_food = new List<food>();
+            new_pay.price_all = 0;
+            new_pay.cust = cus;
+
+
+
+
+
 
 
         }
@@ -305,6 +318,22 @@ namespace WindowsFormsApp1
             newsq.sql = "insert into rest_manager.dbo.orders_item values(" + order_id.ToString() + ",'" + textBox2.Text + "','" + comboBox3.Text + "','" + comboBox2.Text + "','" + comboBox1.Text + "'," + textBox5.Text + "," + textBox4.Text + ",'" + textBox3.Text + "'," + numericUpDown1.Value.ToString() + "," + (numericUpDown1.Value * Convert.ToInt32(textBox5.Text)).ToString() + ",'in progress')";
             newsq.setcon();
             comboBox3.Enabled = false;
+            int i = 0;
+            for (i = 0; i < foods.Length; i++)
+            {
+                if (foods[i].id == Convert.ToInt32(textBox3.Text))
+                {
+                    baseket_food.Add(foods[i]);
+
+                }
+            }
+            newsq.sql = "select account_number from rest_manager.dbo.manager";
+            newsq.setcon();
+            newsq.reader.Read();
+            new_pay.Deposit_account_number=newsq.reader.GetString(0);
+            new_pay.price_all +=Convert.ToDouble(numericUpDown1.Value * Convert.ToInt32(textBox5.Text));
+            new_pay.rest_name = comboBox3.Text;
+
 
 
 
@@ -329,8 +358,14 @@ namespace WindowsFormsApp1
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Form14 payment_form = new Form14();
+            new_pay.basket_food = baseket_food;
+            Form14 payment_form = new Form14(new_pay);
             payment_form.Show();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -96,6 +96,7 @@
     <Compile Include="Class2.cs" />
     <Compile Include="Class3.cs" />
     <Compile Include="Class4.cs" />
+    <Compile Include="Class5.cs" />
     <Compile Include="Form10.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +132,18 @@
     </Compile>
     <Compile Include="Form14_customer_registration.Designer.cs">
       <DependentUpon>Form14_customer_registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form15.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form15.Designer.cs">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form17.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form17.Designer.cs">
+      <DependentUpon>Form17.cs</DependentUpon>
     </Compile>
     <Compile Include="Form5.cs">
       <SubType>Form</SubType>
@@ -205,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form14_customer_registration.resx">
       <DependentUpon>Form14_customer_registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form15.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form17.resx">
+      <DependentUpon>Form17.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -377,6 +396,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ceramic tile pattern combo_002.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Seamless.Tile.Patterns.2\shutterstock_300372164.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Seamless.Tile.Patterns.2\shutterstock_303141995.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
