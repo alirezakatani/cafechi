@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
             newsq.setcon();
             while (newsq.reader.Read())
             {
-                comboBox1.Items.Add(newsq.reader.GetInt32(0));
+                comboBox1.Items.Add(newsq.reader.GetInt32(9));
                 x += 1;
 
 
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             newsq.setcon();
             while (newsq.reader.Read())
             {
-                comboBox1.Items.Add(newsq.reader.GetInt32(0));
+                comboBox1.Items.Add(newsq.reader.GetInt32(9));
 
 
             }
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
             sqlcon newsq = new sqlcon();
-            newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.id=" + comboBox1.Text + " and payment.rest_name='" + pers.rest_name + "'";
+            newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.orders_id=" + comboBox1.Text + " and payment.rest_name='" + pers.rest_name + "'";
             newsq.setdata_adaptor();
 
             dataGridView1.ReadOnly = true;
@@ -72,6 +72,14 @@ namespace WindowsFormsApp1
             sqlcon newsq = new sqlcon();
             newsq.sql = "update payment set status='" + textBox1.Text + "'";
             newsq.setcon();
+            newsq.sql = "update orders_item set status='" + textBox1.Text + "' where order_id="+comboBox1.Text;
+            newsq.setcon();
+            newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.orders_id=" + comboBox1.Text + " and payment.rest_name='" + pers.rest_name + "'";
+            newsq.setdata_adaptor();
+
+            dataGridView1.ReadOnly = true;
+            index = comboBox1.SelectedIndex;
+            dataGridView1.DataSource = newsq.ds.Tables[0];
             MessageBox.Show("تغییر وضعیت تراکنش با موفقیت صورت گرفت", "تغییر وضعیت تراکنش", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

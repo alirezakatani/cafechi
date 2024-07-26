@@ -318,6 +318,7 @@ namespace WindowsFormsApp1
             this.label11.Size = new System.Drawing.Size(65, 38);
             this.label11.TabIndex = 94;
             this.label11.Text = "تعداد";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // button1
             // 

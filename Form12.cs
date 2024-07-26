@@ -85,5 +85,10 @@ namespace WindowsFormsApp1
             seeship.ShowDialog();
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

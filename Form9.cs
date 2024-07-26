@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             sqlcon newsql = new sqlcon();
-            newsql.sql = "select * from food where  food.rest_name='" + pers.rest_name + "'";
+            newsql.sql = "select * from food  inner join feed_back on (food.id=feed_back.food_id)  where  food.rest_name='" + pers.rest_name + "'";
             newsql.setdata_adaptor();
             dataGridView1.ReadOnly = true;
             dataGridView1.DataSource = newsql.ds.Tables[0];

@@ -30,6 +30,7 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -66,6 +66,17 @@ namespace WindowsFormsApp1
             this.panel2.TabIndex = 1;
             this.panel2.Visible = false;
             this.panel2.MouseLeave += new System.EventHandler(this.panel2_MouseLeave);
+            // 
+            // button9
+            // 
+            this.button9.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.button9.Location = new System.Drawing.Point(13, 246);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(199, 42);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "تعیین وضعیت تراکنش";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button7
             // 
@@ -100,6 +111,7 @@ namespace WindowsFormsApp1
             this.button5.TabIndex = 9;
             this.button5.Text = "بررسی بازخورد مشتریان";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             this.button5.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // button4
@@ -218,17 +230,6 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 3;
             this.label1.Text = "به رستوران خود خوش امدید";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("MRT_SS Three", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.button9.Location = new System.Drawing.Point(13, 246);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(199, 42);
-            this.button9.TabIndex = 12;
-            this.button9.Text = "تعیین وضعیت تراکنش";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form3
             // 
