@@ -77,7 +77,7 @@ namespace WindowsFormsApp1
 
 
             sqlcon newsql = new sqlcon();
-            newsql.sql = "select food.name as food_name,food.meal as food_meal,food.kind as food_kind,food.price as food_price,food.time_prepare as food_time_prepare,list.*,feed_back.feed_back,food.score from food left join list_match on (food_name=food.name and food_meal=food.meal and food.rest_name=list_match.rest_name) left join list on(list_match.list_name=list.list_name and list_match.list_meal=list.list_meal)    inner join feed_back on (food.id=feed_back.food_id)  where list.list_id=" + list_id + " and food.rest_name='" + pers.rest_name + "'";
+            newsql.sql = "select food.name as food_name,food.meal as food_meal,food.kind as food_kind,food.price as food_price,food.time_prepare as food_time_prepare,list.*,feed_back.feed_back,food.score from food left join list_match on (food_name=food.name and food_meal=food.meal and food.rest_name=list_match.rest_name) left join list on(list_match.list_name=list.list_name and list_match.list_meal=list.list_meal)    left join feed_back on (food.id=feed_back.food_id)  where list.list_id=" + list_id + " and food.rest_name='" + pers.rest_name + "'";
             newsql.setdata_adaptor();
 
             dataGridView1.ReadOnly = true;

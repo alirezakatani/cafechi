@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
 
                 con.delcon();
                 sqlcon con3 = new sqlcon();
-                con3.sql = "insert into rest_manager.dbo.employee values('" + textBox1.Text + "','" + textBox2.Text + "','" + comboBox1.SelectedText + "'," + Convert.ToInt32(textBox4.Text) + ",'" + textBox5.Text + "'," + (checkBox1.Checked?1:0) + ",'" + path+"','"+pers.rest_name+"',5,'" +textBox6.Text+"','"+textBox7.Text+"','"+(checkBox1.Checked?textBox9.Text:"")+ "','" + (checkBox1.Checked ? textBox8.Text : "")+"')";
+                con3.sql = "insert into rest_manager.dbo.employee values('" + textBox1.Text + "','" + textBox2.Text + "','" + comboBox1.Text + "'," + Convert.ToInt32(textBox4.Text) + ",'" + textBox5.Text + "'," + (checkBox1.Checked?1:0) + ",'" + path+"','"+pers.rest_name+"',5,'" +textBox6.Text+"','"+textBox7.Text+"','"+(checkBox1.Checked?textBox9.Text:"")+ "','" + (checkBox1.Checked ? textBox8.Text : "")+"')";
                 con3.setcon();
                 Console.Write("food created");
                 MessageBox.Show("کارمند مورد نظر ثبت شد", "ثبت کارمند", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -99,7 +99,7 @@ namespace WindowsFormsApp1
             if (checkBox1.Checked == true)
             {
                 sqlcon con2 = new sqlcon();
-                con2.sql = "insert into rest_manager.dbo.manager values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + pers.rest_name + "','" + textBox7.Text + "','" + textBox9.Text + "','" + textBox8.Text + "',1,'" + comboBox1.SelectedText + "')";
+                con2.sql = "insert into rest_manager.dbo.manager values('" + textBox1.Text + "','" + textBox2.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + pers.rest_name + "','" + textBox7.Text + "','" + textBox9.Text + "','" + textBox8.Text + "',1,'" + comboBox1.Text + "')";
                 con2.setcon();
                 Console.Write("food created");
                 MessageBox.Show("کارمند مورد نظر به عنوان ادمین ثبت شد", "ثبت کارمند", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -118,7 +118,7 @@ namespace WindowsFormsApp1
             if (con.reader.HasRows)
             {
                 con.reader.Read();
-                comboBox1.SelectedText = con.reader.GetString(2);
+                comboBox1.Text = con.reader.GetString(2);
                 textBox4.Text = Convert.ToString(con.reader.GetInt32(3));
                 textBox5.Text = con.reader.GetString(4);
                 textBox6.Text = con.reader.GetString(9);
@@ -137,7 +137,7 @@ namespace WindowsFormsApp1
                 newemp = new Person();
                 newemp.name = textBox1.Text;
                 newemp.family_name = textBox2.Text;
-                newemp.job = comboBox1.SelectedText;
+                newemp.job = comboBox1.Text;
                 newemp.salary = Convert.ToInt32(textBox4.Text);
                 newemp.phone_number = textBox4.Text;
                 newemp.email_address = textBox5.Text;
@@ -162,7 +162,7 @@ namespace WindowsFormsApp1
             
             newemp.name = textBox1.Text;
             newemp.family_name = textBox2.Text;
-            newemp.job = comboBox1.SelectedText;
+            newemp.job = comboBox1.Text;
             newemp.salary = Convert.ToInt32(textBox4.Text);
             newemp.phone_number = textBox4.Text;
             newemp.email_address = textBox5.Text;
@@ -219,6 +219,7 @@ namespace WindowsFormsApp1
                 con.sql = "Delete FROM rest_manager.dbo.employee where name='" + textBox1.Text + "' and family_name='" + textBox2.Text + "' and rest_name='"+pers.rest_name+"'";
                 con.setcon();
                 con.delcon();
+                MessageBox.Show("کارمند مورد نظر حذف شذ", "ثبت کارمند", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
@@ -231,6 +232,7 @@ namespace WindowsFormsApp1
                 con2.sql = "Delete FROM rest_manager.dbo.manager where name='" + textBox1.Text + "' and family_name='" + textBox2.Text + "' and rest_name='" + pers.rest_name + "'";
                 con2.setcon();
                 con2.delcon();
+                MessageBox.Show("کارمند مورد نظر حذف شذ", "ثبت کارمند", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             }
         }

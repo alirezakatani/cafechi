@@ -88,7 +88,14 @@ namespace WindowsFormsApp1
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Form15 seeship = new Form15(customer);
+            seeship.ShowDialog();
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form13 newship = new Form13(customer);
+            newship.ShowDialog();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         customer cust;
         int x = 0;
         int index = 0;
+        int food_id = 0;
         public Form15(customer cus)
         {
             InitializeComponent();
@@ -35,6 +36,8 @@ namespace WindowsFormsApp1
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
             sqlcon newsq = new sqlcon();
             newsq.sql = "select * from payment where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.customer_id=" + cust.customer_id.ToString();
             newsq.setcon();
@@ -77,11 +80,11 @@ namespace WindowsFormsApp1
             index = comboBox1.SelectedIndex;
             dataGridView1.DataSource = newsq.ds.Tables[0];
 
-            newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.id=" + comboBox1.Text + " and payment.customer_id=" + cust.customer_id.ToString();
+            newsq.sql = "select orders_item.order_item_id from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.id=" + comboBox1.Text + " and payment.customer_id=" + cust.customer_id.ToString();
             newsq.setcon();
             while (newsq.reader.Read())
             {
-                comboBox2.Items.Add(newsq.reader.GetInt32(14));
+                comboBox2.Items.Add(newsq.reader.GetInt32(0));
 
 
             }
@@ -171,7 +174,7 @@ namespace WindowsFormsApp1
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             sqlcon newsq = new sqlcon();
-            newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) inner join feed_back on ( orders_item.food_id=feed_back.food_id) where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.id=" + comboBox1.Text + " and payment.customer_id=" + cust.customer_id.ToString() + " and orders_item.order_item_id=" + comboBox2.Text;
+            newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) left join feed_back on ( orders_item.food_id=feed_back.food_id) where payment.time='" + dateTimePicker1.Value.ToString("yyyy/MM/dd") + "' and payment.id=" + comboBox1.Text + " and payment.customer_id=" + cust.customer_id.ToString() + " and orders_item.order_item_id=" + comboBox2.Text;
             newsq.setdata_adaptor();
 
             dataGridView1.ReadOnly = true;
@@ -182,12 +185,27 @@ namespace WindowsFormsApp1
         private void button4_Click(object sender, EventArgs e)
         {
             sqlcon newsq = new sqlcon();
-            newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) inner join feed_back on ( orders_item.food_id=feed_back.food_id) where orders_item.food_id=" + comboBox2.Text;
-            newsq.setdata_adaptor();
+            newsq.sql = "select feed_back.food_id from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) left join feed_back on ( orders_item.food_id=feed_back.food_id) where orders_item.order_item_id=" + comboBox2.Text;
+            newsq.setcon();
+            try
+                {
+                newsq.reader.Read();
+                food_id = newsq.reader.GetInt32(0);
+                newsq.sql = "select * from payment inner join orders_item on ( payment.orders_id=orders_item.order_id) left join feed_back on ( orders_item.food_id=feed_back.food_id) where orders_item.food_id=" + food_id.ToString();
 
-            dataGridView1.ReadOnly = true;
-            index = comboBox1.SelectedIndex;
-            dataGridView1.DataSource = newsq.ds.Tables[0];
+                newsq.setdata_adaptor();
+
+                dataGridView1.ReadOnly = true;
+                index = comboBox1.SelectedIndex;
+                dataGridView1.DataSource = newsq.ds.Tables[0];
+
+            }
+           
+            catch
+
+            {
+                MessageBox.Show("بازخورد با شکست مواجه شد", "ثبت بازخورد", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
     }
